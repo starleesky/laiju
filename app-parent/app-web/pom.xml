@@ -14,6 +14,7 @@
 	<packaging>war</packaging>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>com.laiju</groupId>
 			<artifactId>app-api</artifactId>
