@@ -8,9 +8,27 @@
 		<developer.organization><![CDATA[杭州]]></developer.organization>
 	</properties>
 
-	<!-- <dependencyManagement> <dependencies> <dependency> <groupId>com.laiju</groupId> 
-		<artifactId>app-parent</artifactId> <version>1.0-SNAPSHOT</version> </dependency> 
-		</dependencies> </dependencyManagement> -->
+	<!-- -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.laiju</groupId>
+				<artifactId>app-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.laiju</groupId>
+				<artifactId>app-impl</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.laiju</groupId>
+				<artifactId>app-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.laiju</groupId>
@@ -23,6 +41,8 @@
 		<module>app-api</module>
 		<module>app-impl</module>
 		<module>app-web</module>
+		<module>../common-api</module>
+		<module>../common-impl</module>
 	</modules>
 
 	<!-- dev,qa,pre,prod 开发，测试，预发，正式环境 -->
@@ -70,6 +90,5 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
 	</build>
 </project>

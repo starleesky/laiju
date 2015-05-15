@@ -14,7 +14,7 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-
+		<!--app和common -->
 		<dependency>
 			<groupId>com.laiju</groupId>
 			<artifactId>app-api</artifactId>
@@ -52,6 +52,7 @@
 		</dependency>
 
 	</dependencies>
+
 
 	<build>
 		<filters>
