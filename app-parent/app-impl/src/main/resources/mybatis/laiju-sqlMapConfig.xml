@@ -9,11 +9,6 @@
 		<setting name="logImpl" value="SLF4J" />
 	</settings>
 	<typeAliases>
-		<package name="com.xiaoka.ups.user.entity" />
-		<package name="com.xiaoka.ups.role.entity" />
-		<package name="com.xiaoka.ups.module.entity" />
-		<package name="com.xiaoka.ddcx.admin.api.company.entity" />
-
-		<!-- <package name="com.xiaoka.ups.user.entity" /> -->
+		<package name="com.laiju.common.entity" />
 	</typeAliases>
 </configuration>
