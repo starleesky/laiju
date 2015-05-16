@@ -5,7 +5,7 @@
  * Date:     2015年5月15日 上午11:19:43
  * Description: 
  */
-package com.laiju.demo.impl;
+package com.laiju.app.impl.demo;
 
 import com.laiju.demo.api.DemoApi;
 

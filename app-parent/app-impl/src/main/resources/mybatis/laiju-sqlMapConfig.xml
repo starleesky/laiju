@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="autoMappingBehavior" value="PARTIAL" />
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<setting name="defaultStatementTimeout" value="30" />
+		<setting name="logImpl" value="SLF4J" />
+	</settings>
+	<typeAliases>
+		<package name="com.xiaoka.ups.user.entity" />
+		<package name="com.xiaoka.ups.role.entity" />
+		<package name="com.xiaoka.ups.module.entity" />
+		<package name="com.xiaoka.ddcx.admin.api.company.entity" />
+
+		<!-- <package name="com.xiaoka.ups.user.entity" /> -->
+	</typeAliases>
+</configuration>
