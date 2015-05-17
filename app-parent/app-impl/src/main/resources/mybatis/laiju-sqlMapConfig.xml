@@ -7,8 +7,13 @@
 		<setting name="defaultExecutorType" value="SIMPLE" />
 		<setting name="defaultStatementTimeout" value="30" />
 		<setting name="logImpl" value="SLF4J" />
+		<setting name="lazyLoadingEnabled" value="false" />
 	</settings>
+<!-- 
 	<typeAliases>
-		<package name="com.laiju.common.entity" />
+		<typeAlias type="com.laiju.app.api.mapper.DemoUserMapper" />
 	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/base/DemoUserMapper.xml" />
+	</mappers> -->
 </configuration>

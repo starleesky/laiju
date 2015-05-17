@@ -1,11 +1,13 @@
 /*
  * Copyright (C), 2014-2015, 杭州小卡科技有限公司
- * FileName: DemoApi.java
+ * FileName: DemoUserService.java
  * Author:   Administrator
- * Date:     2015年5月15日 上午11:18:43
+ * Date:     2015年5月17日 上午8:48:45
  * Description: 
  */
-package com.laiju.demo.api;
+package com.laiju.app.api.demo.service;
+
+import com.laiju.app.api.entity.DemoUser;
 
 /**
  * <pre>
@@ -16,8 +18,8 @@ package com.laiju.demo.api;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public interface DemoApi {
+public interface DemoUserService {
 
-	public void hello();
+	public DemoUser saveDemoUser(DemoUser demoUser);
 
 }

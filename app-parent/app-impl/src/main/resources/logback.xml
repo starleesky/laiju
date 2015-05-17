@@ -31,7 +31,9 @@
 	</appender>
 
 	<root level="INFO">
-		<appender-ref ref="console" />
+		<appender-ref ref="${log.appender}" />
 	</root>
+
+	<logger name="com.laiju.app.api.mapper" level="DEBUG" />
 
 </configuration>

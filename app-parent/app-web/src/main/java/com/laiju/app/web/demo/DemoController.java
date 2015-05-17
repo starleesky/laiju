@@ -4,8 +4,7 @@
  */
 package com.laiju.app.web.demo;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.laiju.app.api.demo.repo.DemoUserRepo;
+import com.laiju.app.api.demo.service.DemoUserService;
+import com.laiju.app.api.entity.DemoUser;
 import com.laiju.app.web.base.BaseController;
 
 /**
@@ -32,25 +34,19 @@ public class DemoController extends BaseController {
 
 	private final static Logger log = LoggerFactory.getLogger(DemoController.class);
 
-	// @Autowired
-	// CoinKernelService coinKernelService;
+	@Resource
+	DemoUserService demoUserService;
+
+	@Resource
+	DemoUserRepo demoUserRepo;
 
 	@RequestMapping(value = "/get/{id}")
 	@ResponseBody
-	public Map<String, String> demo1(@PathVariable("id") String id) {
+	public DemoUser demo1(@PathVariable("id") Long id) {
 
 		log.info("测试句酷{}", id);
-		ModelAndView model = new ModelAndView();
-		// CoinRecord coinRecord = new CoinRecord();
-		// coinRecord.setAccountId("test");
-		// coinRecord.setCompanyCode(id);
-		// coinKernelService.addSendCoin(coinRecord);
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("companyCode", id);
-		map.put("companyCode", "中文");
-		model.addObject("companyCode", map);
-//		model.setViewName("/index");
-		return map;
+		DemoUser demoUser = demoUserRepo.getDemoUser(id);
+		return demoUser;
 	}
 
 	@RequestMapping(value = "/go/{id}")
@@ -58,12 +54,12 @@ public class DemoController extends BaseController {
 
 		log.info("测试句酷{}", id);
 		ModelAndView model = new ModelAndView();
-		// CoinRecord coinRecord = new CoinRecord();
-		// coinRecord.setAccountId("test");
-		// coinRecord.setCompanyCode(id);
-		// coinKernelService.addSendCoin(coinRecord);
 		model.addObject("companyCode", id);
-//		 model.setViewName("/index");
+		DemoUser demoUser = new DemoUser();
+		demoUser.setUsername("xin.li");
+		demoUser.setPassword("123456");
+		demoUserService.saveDemoUser(demoUser);
+		// model.setViewName("/index");
 		return "index";
 	}
 }

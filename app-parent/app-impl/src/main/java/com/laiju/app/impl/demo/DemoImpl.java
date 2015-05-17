@@ -7,7 +7,7 @@
  */
 package com.laiju.app.impl.demo;
 
-import com.laiju.demo.api.DemoApi;
+import com.laiju.app.api.demo.DemoApi;
 
 /**
  * <pre>

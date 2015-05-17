@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.laiju.app.api.mapper.DemoUserMapper">
+	<resultMap id="BaseResultMap" type="com.laiju.app.api.entity.DemoUser">
+		<id column="ID" property="id" jdbcType="BIGINT" />
+		<result column="USERNAME" property="username" jdbcType="VARCHAR" />
+		<result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		ID, USERNAME,PASSWORD
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from user
+		where ID = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from user
+		where ID = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.laiju.app.api.entity.DemoUser">
+		<selectKey resultType="java.lang.Long" keyProperty="id"
+			order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into user (USERNAME, PASSWORD
+		)
+		values
+		(#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<insert id="insertTest" parameterType="com.laiju.app.api.entity.DemoUser">
+		insert into user
+		(ID,USERNAME, PASSWORD
+		)
+		values
+		(#{id,jdbcType=BIGINT},#{username,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR}
+		)
+	</insert>
+
+</mapper>
